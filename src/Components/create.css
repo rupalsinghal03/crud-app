@@ -1,0 +1,49 @@
+.form-section form {
+    box-shadow: 2px 1px 20px 1px #f7d2ff;
+}
+.see-emp{
+   text-align: end;
+}
+.see-emp button{
+    background-color: #d000ff;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
+.submit-btn button {
+    width: 100%;
+    background-color: #d000ff;
+    color: white;
+    font-weight: bold;
+}
+
+.form-section form {
+    background: #f7d2ff;
+}
+
+.table-section {
+    background: #f7d2ff;
+    padding: 20px;
+}
+.update-section {
+    background: #f7d2ff;
+    padding: 20px;
+}
+
+.table-section thead tr {
+    border: none;
+    background: #5a3e5b;
+    color: white;
+}
+.back-btn button {
+    border: none;
+    width: 100%;
+    background-color: #d000ff;
+    color: white;
+    font-weight: bold;
+}
+tbody td button{
+    border:none;
+    padding: 10px 20px 10px 20px;
+}
