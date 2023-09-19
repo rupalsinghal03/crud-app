@@ -9,6 +9,8 @@ function Update() {
     const [id, setId] = useState(0);
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
+    const [tabledark, settabledark] = useState('')
+
 
     useEffect(() => {
         setId(localStorage.getItem("id"))
@@ -29,34 +31,42 @@ function Update() {
     }
     return (
         <>
-            <div className="container">
+            <div className="container update-container">
                 <div className="row">
-                    <div className="col-12 update-section mt-5">
+                    <div className="form-check form-switch">
+                        <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault"
+                            onClick={() => {
+                                if (tabledark === 'table-dark') settabledark(" ")
+                                else settabledark("table-dark")
+                            }} />
+                    </div>
+                    <div className={`col-12 update-section mt-5 ${tabledark}`}>
                         <h2 className='mb-3'>Update</h2>
                         <form
                             onSubmit={handleSubmit}
+
                         >
                             <div className="form-floating mb-3">
                                 <input type="text" className="form-control" id="floatingInput"
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
                                 />
-                                <label htmlFor="floatingInput">Name</label>
+                                <label htmlFor="floatingInput">Title</label>
 
                             </div>
                             <div className="form-floating mb-3">
-                                <input type="email"
+                                <textarea type="email"
                                     className="form-control"
-                                    id="floatingInput"
+                                    id="floatingTextarea"
                                     aria-describedby="emailHelp"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                 />
-                                <label htmlFor="floatingInput">Email address</label>
+                                <label htmlFor="floatingTextarea">Add Description</label>
 
                             </div>
                             <div className="submit-btn p-2">
-                            <button type="submit" className="btn">Submit</button>
+                                <button type="submit" className="btn">Update</button>
                             </div>
                         </form>
                     </div>

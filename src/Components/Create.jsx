@@ -8,6 +8,7 @@ function Create() {
 
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
+    const [tabledark, settabledark] = useState('')
     // const header = { "Access-Control-Allow-Origin": "*" }
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -27,29 +28,38 @@ function Create() {
                 <div className="row">
                     <div className="col-12">
                         <div className="app-head mb-5 pt-5">
-                            <h2>CRUD APP</h2>
+                            <h2>Theme Switcher</h2>
                         </div>
                         <div className="see-emp">
-                            <Link to='/read'><button className='p-2 mb-3'>See Employees</button></Link>
+                            <Link to='/read'><button className='p-2 mb-3'>See Notes</button></Link>
                         </div>
-                        <form onSubmit={handleSubmit} className='p-5'>
-                            <h3 className='p-3'>Add Employee</h3>
+                        {/* theme switcher */}
+                        <div className="form-check form-switch">
+                            <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault"
+                                onClick={() => {
+                                    if (tabledark === 'table-dark') settabledark(" ")
+                                    else settabledark("table-dark")
+                                }} />
+                        </div>
+                        <form onSubmit={handleSubmit} className={`p-5 ${tabledark}`}>
+
+                            <h3 className='p-3'>Create a Note</h3>
                             <div className="form-floating mb-3">
                                 <input type="text" className="form-control" id="floatingInput" placeholder="enter name" onChange={(e) => setName(e.target.value)} />
-                                <label htmlFor="floatingInput">Name</label>
+                                <label htmlFor="floatingInput">Title</label>
 
                             </div>
                             <div className="form-floating mb-3">
-                                <input type="email"
+                                <textarea type="text"
                                     className="form-control"
-                                    id="floatingInput"
-                                    placeholder="enter email"
+                                    id="floatingTextarea"
+                                    placeholder="enter description"
                                     onChange={(e) => setEmail(e.target.value)} />
-                                <label htmlFor="floatingInput" className="form-label">Email address</label>
+                                <label htmlFor="floatingTextarea" className="form-label">Add Description</label>
 
                             </div>
                             <div className="submit-btn p-2">
-                                <button type="submit" className="btn">Update</button>
+                                <button type="submit" className="btn">Create</button>
                             </div>
                         </form>
                     </div>

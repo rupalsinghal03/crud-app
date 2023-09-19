@@ -13,7 +13,7 @@ function App() {
           <Route path='/read' element={<Read />}></Route>
           <Route path='/update' element={<Update />}></Route>
         </Routes>
-        <Footer/>
+        <Footer />
       </Router>
     </div>
   );

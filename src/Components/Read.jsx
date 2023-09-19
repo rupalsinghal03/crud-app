@@ -13,7 +13,6 @@ function Read() {
             })
     }
 
-
     const handleDelete = (id) => {
         axios.delete(`https://65041568c8869921ae247c17.mockapi.io/crud-operations/${id}`)
             .then(() => {
@@ -25,30 +24,32 @@ function Read() {
         localStorage.setItem("id", id)
         localStorage.setItem("name", name)
         localStorage.setItem("email", email)
+
     }
     useEffect(() => {
         getData();
     }, []);
     return (
         <div>
-            <div className="container">
+            <div className="container read-container">
                 <div className="row">
-                    <div className="col-12 table-section mt-4">
-                        <div className="form-check form-switch">
-                            <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault"
-                                onClick={() => {
-                                    if (tabledark === 'table-dark') settabledark(" ")
-                                    else settabledark("table-dark")
-                                }} />
-                        </div>
-                        <h3 className='p-3'>List of Employees</h3>
+                    <div className="form-check form-switch">
+                        <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault"
+                            onClick={() => {
+                                if (tabledark === 'table-dark') settabledark(" ")
+                                else settabledark("table-dark")
+                            }} />
+                    </div>
+                    <div className={`col-12 table-section mt-4  ${tabledark}`}>
 
-                        <table className={`table ${tabledark}`}>
+                        <h3 className='p-3'>List of Notes</h3>
+
+                        <table className="table">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Email</th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Description</th>
                                     <th scope="col">Update</th>
                                     <th scope="col">Delete</th>
                                 </tr>

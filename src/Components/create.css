@@ -1,16 +1,19 @@
 .form-section form {
     box-shadow: 2px 1px 20px 1px #f7d2ff;
 }
-.see-emp{
-   text-align: end;
+
+.see-emp {
+    text-align: end;
 }
-.see-emp button{
+
+.see-emp button {
     background-color: #d000ff;
     color: white;
     font-weight: bold;
     border: none;
     border-radius: 5px;
 }
+
 .submit-btn button {
     width: 100%;
     background-color: #d000ff;
@@ -25,10 +28,13 @@
 .table-section {
     background: #f7d2ff;
     padding: 20px;
+    box-shadow: 2px 1px 20px 1px #f7d2ff;
 }
+
 .update-section {
     background: #f7d2ff;
     padding: 20px;
+    box-shadow: 2px 1px 20px 1px #f7d2ff;
 }
 
 .table-section thead tr {
@@ -36,6 +42,7 @@
     background: #5a3e5b;
     color: white;
 }
+
 .back-btn button {
     border: none;
     width: 100%;
@@ -43,7 +50,35 @@
     color: white;
     font-weight: bold;
 }
-tbody td button{
-    border:none;
+
+tbody td button {
+    border: none;
     padding: 10px 20px 10px 20px;
+}
+
+/* table.table.table-dark .table-section {
+    background: #353535 !important;
+} */
+.form-section .table-dark {
+    background: #3d004a !important;
+}
+
+.form-section .table-dark label {
+    color: black;
+}
+
+.col-12.table-section.mt-4.table-dark {
+    background: #3d004a !important;
+}
+
+.col-12.table-section.mt-4.table-dark table {
+    color: white !important;
+}
+
+.col-12.update-section.mt-5.table-dark{
+    background: #3d004a !important;
+}
+
+.col-12.update-section.mt-5.table-dark label {
+    color: black;
 }
